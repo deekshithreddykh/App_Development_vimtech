@@ -1,14 +1,19 @@
-# Mobile App Development
+<div align="center">
 
-## AI-Assisted Application Development Using Google Stitch, Antigravity, Flutter and Android Studio
+# 📱 Mobile App Development
 
-| | |
-|---|---|
-| **Document type** | Seminar handout and practical guide |
-| **Subject area** | Mobile Application Development |
-| **Target platform** | Android (Flutter / Dart) |
-| **Level** | Undergraduate |
-| **Output** | Working Android APK installed on a physical device |
+### AI-Assisted App Development with Antigravity, Flutter and Android Studio
+
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+![Android Studio](https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white)
+![Google Antigravity](https://img.shields.io/badge/Google_Antigravity-E8590C?style=for-the-badge&logo=google&logoColor=white)
+
+</div>
+
+This guide explains how to build a Flutter mobile application with the help of AI tools, test it locally, generate an Android APK, and install it on a real Android device.
+
+> **Workflow:** Idea → UI/UX Planning → AI Development → Flutter App → Testing → Android Studio → APK → Mobile Device
 
 ---
 
@@ -18,273 +23,435 @@
 2. [Learning Outcomes](#2-learning-outcomes)
 3. [Application Development Workflow](#3-application-development-workflow)
 4. [Tools and Technologies](#4-tools-and-technologies)
-5. [Environment Setup (Steps 1 to 5)](#5-environment-setup-steps-1-to-5)
-6. [Building the Application (Steps 6 to 8)](#6-building-the-application-steps-6-to-8)
-7. [Android Studio and APK Generation (Steps 9 to 11)](#7-android-studio-and-apk-generation-steps-9-to-11)
-8. [Installing the APK on a Device (Step 12)](#8-installing-the-apk-on-a-device-step-12)
-9. [Troubleshooting Method](#9-troubleshooting-method)
-10. [Summary and Quick Reference](#10-summary-and-quick-reference)
+5. [Environment Setup](#5-environment-setup)
+6. [Build Your Application](#6-build-your-application)
+7. [Test Your Application](#7-test-your-application)
+8. [Prepare the App for Android Studio](#8-prepare-the-app-for-android-studio)
+9. [Build the Android APK](#9-build-the-android-apk)
+10. [Install the APK on a Phone](#10-install-the-apk-on-a-phone)
+11. [Troubleshooting](#11-troubleshooting)
+12. [Quick Reference](#12-quick-reference)
 
 ---
 
-## 1. Introduction
+# 1. Introduction
 
-AI-assisted app development is a modern approach to software development in which Artificial Intelligence tools assist developers in designing, generating, integrating, testing, and improving applications.
+AI-assisted app development uses AI tools to help with application design, code generation, project setup, testing, debugging, and development guidance.
 
-Instead of writing every part of an application manually, developers use AI-powered tools to generate user interface designs, source code, project structures, API integrations, and development guidance. The developer remains responsible for:
+The developer is still responsible for:
 
-- Defining the requirements.
-- Reviewing the generated output.
+- Defining the application requirements.
+- Reviewing the generated code.
 - Testing the application.
-- Making the necessary corrections.
+- Fixing problems.
+- Making final decisions about the application.
 
-This seminar follows one complete application-development workflow, from an initial idea to an application running on a real mobile device.
+This guide follows the complete process:
 
----
-
-## 2. Learning Outcomes
-
-After completing this seminar, students will be able to:
-
-| No. | Learning outcome |
-|:---:|---|
-| 1 | Explain the AI-assisted app development workflow. |
-| 2 | Convert an application idea into a structured UI/UX design. |
-| 3 | Use AI tools to assist with application development and code generation. |
-| 4 | Describe the role of Flutter and Dart in mobile development. |
-| 5 | Test the application during development. |
-| 6 | Build an Android APK using Android Studio. |
-| 7 | Install and test the application on a real Android device. |
+**Idea → UI/UX Planning → AI Development → Flutter App → Testing → Android Studio → APK → Mobile Device**
 
 ---
 
-## 3. Application Development Workflow
+# 2. Learning Outcomes
 
-AI-assisted app development follows a structured process that takes an application from idea to a working mobile application.
+After completing this guide, you will be able to:
 
-![Figure 1. End-to-end AI-assisted app development workflow](images/fig1_workflow.png)
-
-The table below maps each workflow stage to its purpose and the tool used.
-
-| Stage | Activity | Tool or technology | Result |
-|:---:|---|---|---|
-| 1 | Application idea | Developer | Defined requirements and screen list |
-| 2 | UI/UX design | Google Stitch | Multi-screen interface design |
-| 3 | AI-assisted development | Google Antigravity | Generated project and source code |
-| 4 | Flutter application | Flutter and Dart | Runnable cross-platform application |
-| 5 | Testing and debugging | Antigravity, local browser | Verified navigation and behaviour |
-| 6 | Build | Android Studio | Generated APK file |
-| 7 | Deployment | Real Android device | Installed and tested application |
+1. Understand the AI-assisted application development workflow.
+2. Convert an application idea into a structured UI/UX design.
+3. Use AI tools to assist with application development.
+4. Understand the role of Flutter and Dart.
+5. Run and test a Flutter application.
+6. Prepare a Flutter project for Android Studio.
+7. Generate an Android APK.
+8. Install and test the APK on an Android phone.
 
 ---
 
-## 4. Tools and Technologies
+# 3. Application Development Workflow
 
-| Tool | Category | Purpose |
-|---|---|---|
-| **Google Stitch** | UI/UX design | Creates and generates UI/UX designs. |
-| **MCP (Model Context Protocol)** | Integration standard | Connects AI development tools with external services. |
-| **Antigravity** | AI development environment | Provides AI-assisted application development. |
-| **Stitch Skills** | Capability extension | Provides specialised capabilities for working with Stitch. |
-| **Flutter** | Framework | Builds cross-platform mobile applications. |
-| **Dart** | Programming language | Language used to develop Flutter applications. |
-| **Android Studio** | Build tool | Builds, tests, and generates Android APKs. |
+The complete workflow is:
 
-![Figure 2. Tool ecosystem around Google Antigravity](images/fig2_tools.png)
-
-### 4.1 Model Context Protocol (MCP)
-
-MCP stands for Model Context Protocol. It is an open standard that allows AI applications to connect with external tools, services, data sources, and applications in a structured way.
-
-In simple terms, MCP acts as a bridge between an AI model and external tools. It allows the AI to use those tools instead of working only with the information stored inside the AI model itself.
-
-### 4.2 Stitch Loop
-
-Stitch Loop is a workflow, delivered as a skill, that helps you work with multiple application screens using Stitch and the AI development environment. Instead of creating each screen completely separately, the Stitch workflow helps maintain consistency across the screens of the application.
+| Step | Activity | Tool / Technology | Result |
+|---|---|---|---|
+| 1 | Define the application idea | Developer | Requirements and screen list |
+| 3 | AI-assisted development | Google Antigravity | Flutter project and source code |
+| 4 | Build the application | Flutter + Dart | Working mobile application |
+| 5 | Test and debug | Antigravity + Browser | Verified application |
+| 6 | Build the Android app | Android Studio | APK file |
+| 7 | Install and test | Android device | Working mobile application |
 
 ---
 
-## 5. Environment Setup (Steps 1 to 5)
+# 4. Tools and Technologies
 
-The following graph shows the number of numbered actions required in each procedural step of this guide. Steps 6 to 8 are prompt-based and are therefore not included.
+| Tool | Purpose |
+|---|---|
+| **MCP (Model Context Protocol)** | Connect AI tools with external tools and services |
+| **Google Antigravity** | AI-assisted application development |
+| **Flutter** | Framework for building cross-platform applications |
+| **Dart** | Programming language used by Flutter |
+| **Android Studio** | Android development, building, testing, and APK generation |
 
-![Figure 3. Procedural actions required per step](images/fig3_steps_graph.png)
+## 4.1 What is MCP?
 
-### Step 1: Set Up Google Stitch
+**MCP** stands for **Model Context Protocol**.
 
-The API key allows Antigravity to connect to Google Stitch, so that Antigravity can work with the Stitch-generated designs during development.
+In simple terms, MCP acts as a bridge between an AI tool and external tools or services. It allows the AI development environment to interact with supported external tools.
 
-**Procedure**
+It helps maintain consistency between different screens instead of designing every screen completely separately.
 
-1. Open Google Stitch and sign in with your Google account.
-2. Click the profile icon in the top-right corner.
-3. Select **Stitch Settings**.
-4. Scroll down to the **API/Developer** section.
-5. Find **API Key** or **Google API Key**.
-6. Click **Create Key**. A new API key is generated.
-7. Click **Copy** to copy the key.
+---
 
-> **Important:** Keep your API key confidential. Do not share it publicly, post it on GitHub, or include it directly in your source code.
+# 5. Environment Setup
 
-### Step 2: Download and Set Up Google Antigravity
+Before building the application, install and configure the required tools.
 
-Antigravity is the AI-powered development environment used to build the application.
+## 5.1 Set Up Google Antigravity
 
-1. Open your web browser.
-2. Search for Google Antigravity and open the official website.
+Antigravity is the AI-powered development environment used in this workflow.
+
+1. Open a web browser.
+2. Search for **Google Antigravity** and open the official website.
 3. Click **Download**.
-4. Download the version suitable for your operating system.
-5. Install Antigravity on your computer.
+4. Download the version for your operating system.
+5. Install Antigravity.
 6. Open Google Antigravity.
 7. Click **Sign in / Log in**.
-8. Sign in using your Google account.
+8. Sign in with your Google account.
 9. Use the Google account that has access to your Gemini plan or credits, if applicable.
-10. Complete the initial setup and allow the required permissions.
-11. When setup is complete, the Antigravity development workspace is displayed.
+10. Complete the initial setup.
+11. Allow the required permissions.
+12. Confirm that the Antigravity workspace opens successfully.
 
-### Step 3: Connect Google Stitch with Antigravity
+---
 
-Connect Stitch to Antigravity using the API key generated in Step 1.
+## 5.2 Install the Dart / Flutter MCP
 
-1. Open Google Antigravity.
-2. Create or open your project folder (example: `AI-App-Project`).
-3. Open **Settings**.
-4. Go to **Customization**, or find **Installed MCP Servers**.
-5. Click **+ Add MCP Server**.
-6. In the search box, type `Stitch`.
-7. Select the **Google Stitch MCP Server** from the results.
-8. Antigravity loads the Stitch MCP configuration.
-9. When prompted for the API key, paste the key generated in Step 1.
-10. Save or confirm the configuration.
-11. Check that Stitch appears under **Installed MCP Servers** and is connected and enabled.
+The Dart MCP helps Antigravity work with Dart and Flutter.
 
-### Step 4: Install Google Stitch Skills
-
-Stitch Skills give Antigravity additional instructions and capabilities for working with Google Stitch, including creating and managing Stitch-based UI designs.
-
-1. Open Google Antigravity.
-2. Open your project.
-3. In the Antigravity chat or agent area, enter the following instruction:
-
-```text
-Install the Google Stitch skills from GitHub so I can use the Stitch Loop skill to build multi-screen apps.
-```
-
-4. Antigravity locates the required Google Stitch Skills on GitHub.
-5. Allow Antigravity to install and configure the skills.
-6. Wait until the installation completes successfully.
-7. Verify that the Stitch Loop skill is available.
-
-### Step 5: Install the Dart / Flutter MCP
-
-The Dart MCP server helps Antigravity work with the Dart and Flutter development environment while building the application.
-
-1. Open Google Antigravity.
-2. Open your project.
+1. Open **Google Antigravity**.
+2. Open your Flutter project.
 3. Go to **Settings**.
 4. Open **Customization**.
 5. Find **MCP Servers**.
 6. Click **Install MCP** or **+ Add MCP**.
-7. In the search box, type `Dart`.
-8. Find the **Dart MCP Server**.
+7. Search for `Dart`.
+8. Find **Dart MCP Server**.
 9. Click **Install**.
 10. Wait for the installation to finish.
-11. Confirm that the Dart MCP is shown as **Installed / Enabled**.
+11. Confirm that Dart MCP is **Installed / Enabled**.
 
-**If an error occurs**
+### If an Error Appears
 
-1. Do not ignore the error.
-2. Copy the complete error message.
-3. Return to the Antigravity chat or agent area.
-4. Paste the error there.
-5. Ask Antigravity to diagnose and fix the error.
-6. Follow the suggested fix.
-7. Try the Dart MCP installation again.
-8. Repeat until the installation is successful.
+1. Copy the complete error message.
+2. Open the Antigravity Agent.
+3. Paste the error.
+4. Ask Antigravity to identify and fix the problem.
+5. Try the installation again.
 
-Suggested prompt:
+Use this prompt:
 
 ```text
-I am trying to install the Dart MCP for my Flutter project, but I received the following error. Analyse the error, identify the cause, fix the issue, and then help me install the Dart MCP successfully.
+I am trying to install the Dart MCP for my Flutter project, but I received the following error.
+
+Analyse the error, identify the cause, fix the issue, and then help me install the Dart MCP successfully.
+
+Error:
+[PASTE THE COMPLETE ERROR HERE]
 ```
 
-> **Note:** After completing all setup steps, restart Google Antigravity so that the newly installed MCP servers and Stitch skills are loaded correctly.
+---
+        [ or ] 
+## Install Flutter
+
+Use the official Flutter installation guide:
+
+**Official Flutter Installation:**  
+https://docs.flutter.dev/install/manual
+
+### Windows Installation
+
+1. Download the Flutter SDK ZIP from the official Flutter website.
+2. Extract the ZIP file.
+3. Use a suitable location such as:
+
+```text
+C:\Users\<YourName>\develop\flutter
+```
+
+4. The Flutter `bin` directory will be:
+
+```text
+C:\Users\<YourName>\develop\flutter\bin
+```
+
+### Add Flutter to Windows PATH
+
+Open:
+
+**Start → Search → Environment Variables → Edit the system environment variables → Environment Variables**
+
+Under **User variables**:
+
+1. Select `Path`.
+2. Click **Edit**.
+3. Click **New**.
+4. Add:
+
+```text
+C:\Users\<YourName>\develop\flutter\bin
+```
+
+5. Click **OK → OK → OK**.
+6. Close and reopen Command Prompt or PowerShell.
+
+### Verify Flutter
+
+Open a new Command Prompt and run:
+
+```bash
+flutter --version
+```
+
+Then:
+
+```bash
+dart --version
+```
+
+Finally:
+
+```bash
+flutter doctor
+```
+
+`flutter doctor` checks the Flutter, Dart, Android Studio, Android SDK, and other required components.
+
+### Quick Verification
+
+Run:
+
+```bash
+flutter --version
+dart --version
+flutter doctor
+```
+
+If `flutter --version` works successfully, Flutter has been added to the Windows PATH.
 
 ---
 
-## 6. Building the Application (Steps 6 to 8)
+# 6. Build Your Application
 
-### Step 6: Build Your First App with Antigravity
+After setting up Flutter, Dart, MCP, and Antigravity, you can build your application.
 
-With Stitch, MCP, Stitch Skills, and Dart/Flutter configured, an app-building prompt can be given to Antigravity. Two prompts are used in this session.
+## 6.1 Live Demonstration: CookSmart
 
-| Prompt | Purpose |
-|---|---|
-| Prompt 1: Live demonstration | A real example (CookSmart) is built together. |
-| Prompt 2: Student practice | Students replace the example with their own app idea. |
+For the demonstration, we will build an application called **CookSmart**.
 
-#### 6.1 Live Demonstration: CookSmart App
+### Application Purpose
 
-Copy and paste this prompt into the **Antigravity chat/agent area**:
+CookSmart is a recipe discovery application.
+
+### Prompt for Antigravity
+
+Copy and paste the following prompt into the Antigravity Agent:
 
 ```text
-Can you build me a four-screen mobile app called "CookSmart" using the Stitch Loop skill?
+Build a complete Flutter mobile application called "CookSmart".
 
-Screen 1: Create a home screen with featured recipes, food categories, and a search bar.
+The application is a recipe discovery app.
 
-Screen 2: Create an ingredient input screen where users can enter the ingredients they have and search for recipes based on those ingredients.
+TECHNOLOGY:
+- Flutter
+- Dart
+- Android
+- Use a clean and maintainable Flutter project structure.
 
-Screen 3: Create a recipe result screen showing the recipe name, ingredients, preparation time, instructions, and a Save Recipe button.
+SCREENS:
 
-Screen 4: Create a saved recipes screen where users can view their saved recipes.
+1. HOME SCREEN
+- Display the CookSmart application name.
+- Show featured recipes.
+- Show food categories.
+- Add a search bar.
+- Display recipe cards with image, title and short information.
 
-Use a dark background with warm orange accents and clean white typography. Make the UI modern, responsive, and mobile-friendly. Keep navigation simple and consistent between all four screens.
+2. INGREDIENT SEARCH SCREEN
+- Allow users to enter ingredients they currently have.
+- Add an input field and Add Ingredient button.
+- Display added ingredients as removable chips.
+- Add a Search Recipes button.
+- Display suitable recipe results.
 
-Use Flutter and Dart to implement the application. Use the Stitch Loop skill to create and maintain the multi-screen design. Build the complete project and make sure it can run successfully.
+3. RECIPE DETAILS SCREEN
+- Display recipe name.
+- Display recipe image.
+- Display ingredients.
+- Display preparation time.
+- Display instructions.
+- Add a Save Recipe button.
+
+4. SAVED RECIPES SCREEN
+- Display recipes saved by the user.
+- Allow the user to open a saved recipe.
+- Show a suitable empty state when there are no saved recipes.
+
+NAVIGATION:
+- Connect all screens correctly.
+- Use simple and consistent navigation.
+- Make sure the Android back button works correctly.
+
+UI/UX:
+- Modern mobile interface.
+- Dark background.
+- Warm orange accent colour.
+- Clean white typography.
+- Rounded cards.
+- Good spacing.
+- Responsive layout.
+- Consistent buttons and components.
+- Professional visual hierarchy.
+
+FUNCTIONALITY:
+- Implement working navigation.
+- Implement ingredient input.
+- Implement search/filter behaviour using local demo data.
+- Implement save recipe behaviour.
+- Use local/demo data initially.
+- Keep the project structured so that an API or database can be connected later.
+
+DEVELOPMENT REQUIREMENTS:
+- Create the complete Flutter project.
+- Use Dart.
+- Organise the source code properly.
+- Create reusable widgets where appropriate.
+- Avoid unnecessary packages.
+- Check for Dart and Flutter errors.
+- Run Flutter analysis.
+- Fix errors that prevent the application from running.
+- Run the application locally.
+- Verify navigation and major features.
+
+Do not stop after creating the UI.
+
+Build the complete working Flutter application and verify that it runs successfully.
 ```
 
-The CookSmart screen specification is summarised below.
+### CookSmart Screens
 
-| Screen | Name | Key content |
-|:---:|---|---|
-| 1 | Home | Featured recipes, food categories, search bar |
-| 2 | Ingredient input | Ingredient entry and recipe search by ingredients |
-| 3 | Recipe result | Name, ingredients, preparation time, instructions, Save Recipe button |
-| 4 | Saved recipes | List of recipes saved by the user |
+| Screen | Main Content |
+|---|---|
+| Home | Featured recipes, categories, search |
+| Ingredient Search | Ingredient entry and recipe search |
+| Recipe Details | Recipe name, ingredients, time, instructions |
+| Saved Recipes | Saved recipes and empty state |
 
-| Design attribute | Specification |
+### CookSmart Design
+
+| Design Element | Specification |
 |---|---|
 | Background | Dark |
-| Accent colour | Warm orange |
+| Accent | Warm orange |
 | Typography | Clean white |
-| Quality requirements | Modern, responsive, mobile-friendly, consistent navigation |
+| Style | Modern and mobile-friendly |
+| Layout | Responsive with rounded cards |
 
-#### 6.2 Student Practice: Build Your Own App
+---
 
-After the demonstration, students create their own application by replacing the CookSmart idea. Use the following template:
+## 6.2 Student Practice: Build Your Own App
+
+After the CookSmart demonstration, create your own application.
+
+Replace the information in the template below with your own idea.
 
 ```text
-Can you build me a [NUMBER]-screen mobile app called "[APP NAME]" using the Stitch Loop skill?
+Build a complete Flutter mobile application called "[APP NAME]".
 
-Screen 1: Create a [HOME/DASHBOARD] screen with [FEATURES].
+APPLICATION PURPOSE:
+[Describe what the application does in 2–3 sentences.]
 
-Screen 2: Create a [SCREEN NAME] where users can [ACTION].
+TECHNOLOGY:
+- Flutter
+- Dart
+- Android
+- Use a clean and maintainable Flutter project structure.
 
-Screen 3: Create a [SCREEN NAME] showing [INFORMATION/FEATURES].
+SCREENS:
 
-Screen 4: Create a [SCREEN NAME] where users can [ACTION].
+1. [SCREEN NAME]
+- [Feature]
+- [Feature]
+- [Feature]
 
-Use a [DESCRIBE YOUR DESIGN STYLE]. Make the UI modern, responsive, and mobile-friendly. Keep navigation simple and consistent between all screens.
+2. [SCREEN NAME]
+- [Feature]
+- [Feature]
+- [Feature]
 
-Use Flutter and Dart to implement the application. Use the Stitch Loop skill to create and maintain the multi-screen design. Build the complete project and make sure it can run successfully.
+3. [SCREEN NAME]
+- [Feature]
+- [Feature]
+- [Feature]
+
+4. [SCREEN NAME]
+- [Feature]
+- [Feature]
+- [Feature]
+
+Add more screens if required.
+
+NAVIGATION:
+- Connect all screens correctly.
+- Use simple and consistent navigation.
+- Make sure back navigation works correctly.
+
+UI/UX:
+- Design style: [DESCRIBE STYLE]
+- Theme: [LIGHT / DARK]
+- Primary colour: [COLOUR]
+- Accent colour: [COLOUR]
+- Typography: [DESCRIBE]
+- Use consistent spacing, cards, buttons and components.
+- Make the application responsive and mobile-friendly.
+
+FUNCTIONALITY:
+- [FEATURE 1]
+- [FEATURE 2]
+- [FEATURE 3]
+- [FEATURE 4]
+
+Use local/demo data initially where a backend is not available.
+
+DEVELOPMENT REQUIREMENTS:
+- Create the complete Flutter project.
+- Use Dart.
+- Organise the code properly.
+- Create reusable widgets where appropriate.
+- Implement all screens.
+- Implement navigation.
+- Check dependencies.
+- Run Flutter analysis.
+- Fix Dart and Flutter errors.
+- Run the application.
+- Test the major features.
+- Make sure the application is ready for further development.
+
+Do not only create a visual prototype.
+
+Build the complete working Flutter application.
 ```
 
-### Step 7: Run and Test the App
+---
 
-Once Antigravity has built the application, ask it to run the Flutter app locally and verify that everything works correctly. Copy and paste this prompt into the Antigravity chat/agent:
+# 7. Test Your Application
+
+After Antigravity builds the application, run it locally and test it.
+
+Use this prompt:
 
 ```text
-Hey, can you take this mobile app design and turn it into a working Flutter application? Make sure the navigation works correctly between all screens and matches the design exactly. Then run it locally so I can test it.
+Hey, can you take this mobile app design and turn it into a working Flutter application?
 
 Please:
 - Convert the current design into a functional Flutter application.
@@ -296,23 +463,49 @@ Please:
 - Make sure the app is ready for testing.
 ```
 
-**Open and test the app in the browser**
+## 7.1 Open the App in the Browser
 
-After Antigravity runs the application successfully, it provides a local URL, for example:
+After the application starts successfully, Antigravity may provide a local URL such as:
 
 ```text
 http://localhost:8080
 ```
 
-**If an error appears:** do not try to solve it manually at first. Copy the complete error, paste it into the Antigravity Agent, ask it to diagnose and fix the error, and run the app again.
+Open the URL in your browser.
 
-### Step 8: Prepare the Flutter App for Android Studio
+### Test These Items
 
-After testing in the browser, prepare the Flutter project for Android Studio so that it can be converted into an Android APK.
+- Application startup
+- Every screen
+- Navigation
+- Buttons
+- Forms
+- Search
+- Data display
+- UI layout
+- Responsiveness
+- Application stability
 
-#### 8.1 Live Demonstration: CookSmart
+### If an Error Appears
 
-Paste this prompt into the Antigravity chat/agent:
+Do not immediately try to fix the error manually.
+
+1. Copy the complete error.
+2. Paste it into the Antigravity Agent.
+3. Ask the Agent to diagnose the problem.
+4. Apply the suggested fix.
+5. Run the application again.
+6. Test the affected feature again.
+
+---
+
+# 8. Prepare the App for Android Studio
+
+After testing the application, prepare the Flutter project for Android Studio.
+
+## 8.1 Prepare the Flutter Project
+
+For example, for CookSmart:
 
 ```text
 Prepare the CookSmart Flutter project for Android Studio and make sure it is ready to build as an Android APK.
@@ -322,8 +515,9 @@ Please:
 - Make sure all required dependencies are properly configured.
 - Check and fix any Dart or Flutter errors.
 - Configure the Android project correctly.
-- Check that there are no missing packages, files, or configuration issues.
-- Run Flutter analysis and fix any errors or warnings that could prevent the app from building.
+- Check for missing packages, files, or configuration issues.
+- Run Flutter analysis.
+- Fix errors that could prevent the app from building.
 - Clean the project and fetch all required dependencies.
 - Verify that the project is ready to open and build in Android Studio.
 - Do not change the existing UI or functionality unnecessarily.
@@ -331,9 +525,9 @@ Please:
 Finally, confirm that the project is ready to build an Android APK.
 ```
 
-#### 8.2 Student Practice Template
+### For Your Own App
 
-Students replace the app-specific information with their own project.
+Replace the application name:
 
 ```text
 Prepare my [APP NAME] Flutter project for Android Studio and make sure it is ready to build as an Android APK.
@@ -344,190 +538,291 @@ Please:
 - Check and fix any Dart or Flutter errors.
 - Configure the Android project correctly.
 - Check for missing packages, files, or configuration issues.
-- Run Flutter analysis and fix errors that could prevent the app from building.
+- Run Flutter analysis.
+- Fix errors that could prevent the app from building.
 - Clean the project and fetch all required dependencies.
 - Verify that the project is ready to open and build in Android Studio.
 - Do not change my existing UI or functionality unnecessarily.
 ```
 
-> **Important:** If Antigravity reports an error, copy the complete error message and paste it back into the Agent with this prompt:
+### If Antigravity Reports an Error
+
+Use:
 
 ```text
-I received this error while preparing the Flutter project for Android Studio. Analyze the error, fix the root cause, and verify the project again.
-```
+I received this error while preparing the Flutter project for Android Studio.
 
-On success, Antigravity reports a message similar to the following:
-
-> The project is now fully configured and all required dependencies are in place. You can directly open the Android folder (or the root folder) in Android Studio to continue your development or build the Android APK.
-
----
-
-## 7. Android Studio and APK Generation (Steps 9 to 11)
-
-### Step 9: Open the Flutter Project in Android Studio
-
-1. Download and install Android Studio from the official Android Studio website.
-2. Open Android Studio.
-3. On the welcome screen, select **Open**.
-4. Navigate to the Flutter project folder created by Antigravity.
-5. Select the project folder and click **OK / Open**.
-6. Wait for Android Studio to load the project and complete Gradle synchronisation.
-7. Inside the project, locate the `android` folder.
-8. Open or select the `android` folder for the Android-specific project configuration.
-9. Allow Android Studio to download or configure any required dependencies if prompted.
-10. Wait until the project finishes syncing without errors.
-
-**Flutter project structure**
-
-```text
-Your Flutter Project
-|
-|-- lib/              Dart source code
-|-- assets/           Images, fonts and other resources
-|-- pubspec.yaml      Project dependencies and configuration
-|
-`-- android/          Open and use this folder for Android Studio
-    |-- app/
-    |-- gradle/
-    `-- ...
-```
-
-| Folder or file | Role |
-|---|---|
-| `lib/` | Contains the Dart source code of the application. |
-| `assets/` | Contains images, fonts, and other static resources. |
-| `pubspec.yaml` | Declares dependencies, assets, and project metadata. |
-| `android/` | Contains the Android-specific project used by Android Studio. |
-
-### Step 10: Wait for Android Studio to Finish Loading
-
-After opening the project, a process such as "Importing 'android' Gradle Project" or "Gradle: Downloading..." may be displayed.
-
-1. Wait while Android Studio imports the Android project.
-2. Allow Gradle to download and configure the required dependencies.
-3. Do not close Android Studio during this process.
-4. Do not interrupt the Gradle sync unless it is clearly stuck or has failed.
-5. Once the process finishes, check that the project loads without errors.
-
-**If an error appears**
-
-If Android Studio shows a red error, Gradle error, dependency error, or configuration error:
-
-1. Copy the complete error message.
-2. Return to the Antigravity chat/agent.
-3. Paste the error.
-4. Ask Antigravity to analyse and fix it.
-
-Use this prompt:
-
-```text
-Android Studio is showing the following error while importing/syncing the Android project. Please analyze the error, identify the root cause, fix the project configuration, and make sure the Flutter project can be opened and built successfully in Android Studio.
+Analyse the error, identify the root cause, fix the issue, and verify the project again.
 
 Error:
 [PASTE THE COMPLETE ERROR HERE]
 ```
 
-After Antigravity fixes the issue, return to Android Studio and sync or reload the project again.
+---
 
-### Step 11: Generate the Android APK
+# 9. Build the Android APK
 
-Once the Gradle sync has finished successfully, generate the final Android APK.
+## 9.1 Open the Flutter Project in Android Studio
 
-1. Wait until Android Studio shows that the Gradle sync is complete.
-2. Go to the top menu in Android Studio.
-3. Click **Build**.
-4. Select **Generate App Bundles or APKs**.
-5. Click **Generate APKs**.
-6. Android Studio starts the compile and build process.
-7. Wait until the process finishes.
-8. Do not close Android Studio while the APK is being generated.
-9. When the build succeeds, a message such as "APK(s) generated successfully" is displayed.
-10. Click **Locate** in that message.
-11. Android Studio opens the folder containing the generated APK.
-12. Find the `.apk` file.
-13. Copy the APK.
-14. Paste it somewhere convenient, such as the Desktop.
+A Flutter project normally contains an Android-specific folder:
+
+```text
+Your Flutter Project
+│
+├── lib/
+├── assets/
+├── pubspec.yaml
+│
+└── android/
+    ├── app/
+    ├── gradle/
+    ├── gradle.properties
+    ├── settings.gradle
+    └── ...
+```
+
+### Important Folders
+
+| Folder / File | Purpose |
+|---|---|
+| `lib/` | Dart source code |
+| `assets/` | Images, fonts, and other resources |
+| `pubspec.yaml` | Dependencies, assets, and project configuration |
+| `android/` | Android-specific project files |
+
+## 9.2 Open the Project
+
+1. Open **Android Studio**.
+2. Select **Open**.
+3. Navigate to your Flutter project.
+4. Select the project or its `android` folder as required by your Android Studio setup.
+5. Click **Open**.
+6. Wait for Android Studio to load the project.
+7. Wait for Gradle synchronisation.
+8. Allow required dependencies to download.
+9. Do not close Android Studio during synchronisation.
+
+Example:
+
+```text
+C:\Users\<YourName>\Documents\Mobile_Apps\CookSmart
+```
+
+## 9.3 Wait for Gradle Sync
+
+Android Studio may display messages such as:
+
+```text
+Importing 'android' Gradle Project
+```
+
+or:
+
+```text
+Gradle: Downloading...
+```
+
+Wait until the process finishes.
+
+Do not interrupt Gradle synchronisation unless it is clearly stuck or has failed.
+
+### If a Gradle Error Appears
+
+Copy the complete error and use this prompt in Antigravity:
+
+```text
+Android Studio is showing the following error while importing or syncing the Android project.
+
+Please analyse the error, identify the root cause, fix the project configuration, and make sure the Flutter project can be opened and built successfully in Android Studio.
+
+Error:
+[PASTE THE COMPLETE ERROR HERE]
+```
+
+After the issue is fixed, return to Android Studio and sync the project again.
 
 ---
 
-## 8. Installing the APK on a Device (Step 12)
+## 9.4 Generate the APK
 
-### Step 12: Transfer and Install the APK on a Mobile Device
+Once Gradle synchronisation completes successfully:
 
-1. Locate the generated `.apk` file on your computer.
-2. Connect your Android phone to the computer using a USB cable.
-3. Unlock your phone.
-4. Select **File Transfer** when the USB notification appears.
-5. Open the phone storage from the computer.
-6. Copy the `.apk` file from your computer.
-7. Paste it into the phone's **Downloads** folder.
-8. Safely disconnect the phone from the computer.
-9. Open **Files / File Manager** on the phone.
-10. Go to **Downloads**.
-11. Tap the `.apk` file.
-12. If Android asks for permission to install apps from that source, allow it.
-13. Tap **Install**.
-14. Wait for the installation to complete.
-15. Tap **Open** to launch the application.
+1. Open the **Build** menu.
+2. Select **Generate App Bundles or APKs**.
+3. Select **Generate APKs**.
+4. Wait for the build to finish.
+5. Do not close Android Studio during the build.
+6. When the build succeeds, Android Studio will show a success message.
+7. Click **Locate**.
+8. Find the generated `.apk` file.
+9. Copy the APK to a convenient location, such as the Desktop.
 
-**Alternative transfer methods**
+---
 
-| Method | Description | Suitability |
-|---|---|---|
-| USB cable | Copy the APK directly to the phone. | Recommended for a simple development workflow |
-| Google Drive | Upload on the computer, download on the phone. | Useful when no cable is available |
-| WhatsApp | Send the APK to yourself. | Quick, but depends on the messaging service |
-| Quick Share | Share directly between nearby devices. | Useful for wireless transfer |
+# 10. Install the APK on a Phone
 
-### Final Step: Install and Run Your App
+## 10.1 Transfer the APK
 
-1. Find the generated `.apk` file on your computer.
-2. Transfer the APK to your Android phone using USB, Quick Share, Google Drive, WhatsApp, or another method.
-3. Open the APK on your phone.
-4. Allow **Install unknown apps** if Android asks for permission.
+You can transfer the APK using:
+
+- USB cable
+- Quick Share
+- Google Drive
+- WhatsApp
+- Another suitable file-transfer method
+
+### Recommended: USB
+
+1. Connect the Android phone to the computer using USB.
+2. Unlock the phone.
+3. Select **File Transfer** when prompted.
+4. Open the phone storage on the computer.
+5. Copy the `.apk` file.
+6. Paste it into the phone's **Downloads** folder.
+7. Safely disconnect the phone.
+
+## 10.2 Install the APK
+
+1. Open **Files / File Manager** on the phone.
+2. Open **Downloads**.
+3. Tap the `.apk` file.
+4. If Android asks for permission, allow installation from the requested source.
 5. Tap **Install**.
 6. Wait for the installation to complete.
-7. Tap **Open** and launch your application.
-8. Test all screens, buttons, navigation, and features.
+7. Tap **Open**.
+
+## 10.3 Test the Installed Application
+
+Check:
+
+- Application startup
+- Every screen
+- Navigation
+- Buttons
+- Forms
+- Search
+- Data display
+- UI layout
+- Responsiveness
+- Application stability
 
 ---
 
-## 9. Troubleshooting Method
+# 11. Troubleshooting
 
-Throughout this workflow, errors are handled with the same method: the complete error message is passed back to the AI agent, which diagnoses and fixes it.
+Use the same basic troubleshooting process throughout the workflow.
 
-![Figure 4. Standard error-resolution loop](images/fig4_error_loop.png)
+### Error-Resolution Process
 
-| Where the error occurs | Action |
+```text
+Error occurs
+     ↓
+Copy the complete error
+     ↓
+Paste it into Antigravity
+     ↓
+Ask AI to identify the root cause
+     ↓
+Apply the fix
+     ↓
+Run analysis / build again
+     ↓
+Test the application
+```
+
+## 11.1 General Error Prompt
+
+```text
+I found an error in my Flutter application.
+
+Please:
+
+1. Analyse the complete error.
+2. Identify the root cause.
+3. Identify the file responsible.
+4. Fix the issue.
+5. Check whether the fix affects other parts of the application.
+6. Run Flutter analysis again.
+7. Run the application again.
+8. Verify that the issue is completely resolved.
+
+Error:
+[PASTE COMPLETE ERROR HERE]
+```
+
+## 11.2 Where to Use the Error Method
+
+| Problem | What to Do |
 |---|---|
-| Dart MCP installation (Step 5) | Paste the error into Antigravity and ask for a diagnosis and fix, then reinstall. |
-| Running the app locally (Step 7) | Paste the full error into the Agent and run the app again. |
-| Preparing the project (Step 8) | Use the Step 8 error prompt, then verify the project again. |
-| Gradle or import errors (Step 10) | Use the Step 10 prompt, then sync or reload in Android Studio. |
+| Dart MCP installation | Paste the complete error into Antigravity and ask for a fix |
+| Running the app | Paste the complete error and run the app again |
+| Preparing the project | Use the error prompt and verify the project |
+| Gradle / Android Studio error | Paste the error into Antigravity, fix it, then sync again |
 
 ---
 
-## 10. Summary and Quick Reference
+# 12. Quick Reference
 
-| Step | Task | Where |
-|:---:|---|---|
-| 1 | Create and copy the Stitch API key | Google Stitch |
-| 2 | Install and sign in to Antigravity | Antigravity |
-| 3 | Add the Stitch MCP server using the API key | Antigravity |
-| 4 | Install Stitch Skills (Stitch Loop) | Antigravity |
-| 5 | Install the Dart MCP and restart Antigravity | Antigravity |
-| 6 | Build the app with the Stitch Loop prompt | Antigravity |
-| 7 | Run the app locally and test in the browser | Antigravity, browser |
-| 8 | Prepare the project for Android Studio | Antigravity |
-| 9 | Open the project and sync Gradle | Android Studio |
-| 10 | Wait for Gradle import to finish | Android Studio |
-| 11 | Build, Generate App Bundles or APKs, Generate APKs | Android Studio |
+## Complete Workflow
+
+| Step | Task | Tool |
+|---:|---|---|
+| 1 | Define the application idea | Developer |
+| 3 | Set up Antigravity | Antigravity |
+| 5 | Install Flutter and Dart | Flutter |
+| 6 | Build the application | Antigravity + Flutter |
+| 7 | Run and test the application | Browser |
+| 8 | Prepare the project for Android | Antigravity |
+| 9 | Open and sync the project | Android Studio |
+| 10 | Wait for Gradle synchronisation | Android Studio |
+| 11 | Generate the APK | Android Studio |
 | 12 | Transfer and install the APK | Android device |
 
-**Key points**
+## Important Points
 
-- The developer defines requirements, reviews output, and tests; the AI tools generate and assist.
-- MCP connects the AI environment to external tools such as Stitch and Dart.
-- Stitch Loop keeps multiple screens consistent.
-- Keep API keys confidential and out of source code and public repositories.
-- When any error occurs, pass the complete error message back to the AI agent.
+- The developer defines the requirements and reviews the result.
+- AI tools assist with design, development, debugging, and guidance.
+- Flutter is used to build the mobile application.
+- Dart is the programming language used by Flutter.
+- Android Studio is used to prepare and build the Android application.
+- Test the application before generating the APK.
+- Always use the complete error message when asking AI to fix a problem.
+- Keep API keys and other credentials private.
+- Never place API keys in public repositories or source code.
+- Restart Antigravity after installing or changing MCP servers when required.
+
+---
+
+## Final Goal
+
+By following this guide, you should be able to go from:
+
+**Application Idea**
+
+↓
+
+**UI/UX Design**
+
+↓
+
+**AI-Assisted Flutter Development**
+
+↓
+
+**Local Testing**
+
+↓
+
+**Android Studio**
+
+↓
+
+**APK Generation**
+
+↓
+
+**Android Phone**
+
+↓
+
+**Working Mobile Application**
