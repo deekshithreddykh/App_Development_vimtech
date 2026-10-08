@@ -11,7 +11,7 @@
 
 </div>
 
-This guide explains how to build a Flutter mobile application with the help of AI tools, test it locally, generate an Android APK, and install it on a real Android device.
+This guide explains how to build a Flutter mobile application with the help of AI tools, test it locally, generate an Android APK, and install it on a  Android device.
 
 > **Workflow:** Idea → UI/UX Planning → AI Development → Flutter App → Testing → Android Studio → APK → Mobile Device
 
