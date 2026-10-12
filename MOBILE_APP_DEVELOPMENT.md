@@ -86,19 +86,11 @@ The complete workflow is:
 
 | Tool | Purpose |
 |---|---|
-| **MCP (Model Context Protocol)** | Connect AI tools with external tools and services |
 | **Google Antigravity** | AI-assisted application development |
 | **Flutter** | Framework for building cross-platform applications |
 | **Dart** | Programming language used by Flutter |
 | **Android Studio** | Android development, building, testing, and APK generation |
 
-## 4.1 What is MCP?
-
-**MCP** stands for **Model Context Protocol**.
-
-In simple terms, MCP acts as a bridge between an AI tool and external tools or services. It allows the AI development environment to interact with supported external tools.
-
-It helps maintain consistency between different screens instead of designing every screen completely separately.
 
 ---
 
@@ -161,7 +153,9 @@ Error:
 ```
 
 ---
-        [ or ] 
+       ** [ or ] **
+
+        
 ## Install Flutter
 
 Use the official Flutter installation guide:
